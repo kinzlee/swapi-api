@@ -1,0 +1,15 @@
+{
+    "autoload" : {
+        "classmap": [
+            "src/",
+            "src/Router/Router.php",
+            "src/Controller/"
+        ],
+        "psr-4" : {
+            "Src\\" : "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
