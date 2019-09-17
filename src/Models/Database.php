@@ -11,6 +11,7 @@ class Database
     private $db_name = 'swapi';
     private $password = '';
     private $error;
+    private $statement;         
     private $connection;
 
     public function __construct()
@@ -63,8 +64,8 @@ class Database
 
     public function resultSet()
     {
-        $this->sexecute();
-        $this->dtatement->fetchALL(PDO::FETCH_ASSOC);
+        $this->execute();
+        $this->statement->fetchALL(PDO::FETCH_ASSOC);
     }
 
     public function result()

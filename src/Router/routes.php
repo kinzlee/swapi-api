@@ -1,6 +1,6 @@
 <?php
 
 $router->define([
-    'movies' => 'MoviesController',
-    'comments' => 'CommentsController'
+    'movies' => 'MoviesController@index',
+    'comments' => 'CommentsController@store'
 ]);

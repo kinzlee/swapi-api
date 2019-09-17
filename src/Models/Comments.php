@@ -2,7 +2,7 @@
 
 namespace Src\Models;
 
-use App\Models\Model;
+use Src\Models\Model;
 
 class Comments extends Model
 {
@@ -11,6 +11,7 @@ class Comments extends Model
         $query = 'SELECT * FROM comments';
         $this->db->query($query);
         $comments = $this->db->result();
+        var_dump($comments);
         return $comments;
     }
 
@@ -20,10 +21,10 @@ class Comments extends Model
         :movie_id, :created_at)';
 
         $this->db->query($query);
-        $this->db->bind('comment', $comment);
+        $this->db->bind(':comment', $comment);
         $this->db->bind(':movie_id', $movie_id);
         $this->db->bind(':created_at', date("Y-m-d H-i-s"));
-
+        $this->db->execute();
         $result = $this->getComments();
 
         echo $result;

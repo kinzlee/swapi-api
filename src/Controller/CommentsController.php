@@ -9,7 +9,7 @@ class CommentsController extends Controller
         $comment = file_get_contents('php://input');
         $comment = json_decode($comment, true);
         $comment = array_map('trim', $comment);
-        $comment = array_map('htmlspecial_chars', $comment);
+        $comment = array_map('htmlspecialchars', $comment);
 
         $this->comments->insertComment($comment['comment'], $comment['movie_id']);
     }

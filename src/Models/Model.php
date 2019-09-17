@@ -2,7 +2,7 @@
 
 namespace Src\Models;
 
-Abstract class Model
+abstract class Model
 {
     protected $db;
     public function __construct()

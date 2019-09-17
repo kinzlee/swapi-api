@@ -22,7 +22,8 @@ class Router
 
         if(array_key_exists($uri, $this->routes))
         {
-            return $this->callAction('MoviesController', 'index');
+            $pointer = (explode("@", $this->routes[$uri]));
+            return $this->callAction($pointer[0], $pointer[1]);
         }
 
         throw new Exception('No routes defined');
@@ -42,6 +43,7 @@ class Router
              $controller = new \Src\Controller\MoviesController($moviesServices); 
             return $controller->$action();
         } 
+        $controller = new \Src\Controller\CommentsController();
 
         if(!method_exists($controller, $action)) {
             throw new Exception(
@@ -50,7 +52,6 @@ class Router
         }
 
         
-        $controller = new \Src\Controller\CommentsController();
         return $controller->$action();
     }
 }
