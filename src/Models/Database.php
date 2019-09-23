@@ -65,12 +65,12 @@ class Database
     public function resultSet()
     {
         $this->execute();
-        $this->statement->fetchALL(PDO::FETCH_ASSOC);
+        $this->statement->fetchALL();
     }
 
     public function result()
     {
         $this->execute();
-        $this->statement->fetchALL(PDO::FETCH_ASSOC);
+        return $this->statement->fetchALL();
     }
 }

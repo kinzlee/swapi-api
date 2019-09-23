@@ -11,6 +11,7 @@ class CommentsController extends Controller
         $comment = array_map('trim', $comment);
         $comment = array_map('htmlspecialchars', $comment);
 
-        $this->comments->insertComment($comment['comment'], $comment['movie_id']);
+        $this->comments->insertComment($comment['comment'], $comment['episode_id']);
     }
+
 }
