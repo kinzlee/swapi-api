@@ -5,6 +5,9 @@ use Exception;
 
 use Src\services\MoviesServices;
 use Src\Controller\MoviesController;
+use Src\Controller\CharactersController;
+use Src\services\CharactersServices;
+
 
 class Router
 {
@@ -42,7 +45,11 @@ class Router
             $moviesServices = new MoviesServices();
              $controller = new \Src\Controller\MoviesController($moviesServices); 
             return $controller->$action();
-        } 
+        } elseif($controller === 'CharactersController') {
+            $charactersServices = new CharactersServices();
+            $charController = new \Src\Controller\CharactersController($charactersServices);
+            return $charController->$action();
+        }
         $controller = new \Src\Controller\CommentsController();
 
         if(!method_exists($controller, $action)) {
