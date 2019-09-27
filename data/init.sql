@@ -2,11 +2,17 @@ CREATE DATABASE IF NOT EXISTS `swapi`;
 USE  `swapi`;
 
 
-CREATE TABLE IF NOT EXISTS `comments`(
-    `id` int( 11 ) AUTO_INCREMENT PRIMARY KEY,
-    `episode_id` int(11) NOT NULL,
-    `created_at` datetime NOT NULL,
-    `comment` varchar(500) NOT NULL
-) ENGINE=InnoDB CHARSET=utf8;
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$config = array(
+    'host' => $server ,
+    'user' => $username ,
+    'pw' => $password,
+    'db' => $db 
+);
 
 
