@@ -1,18 +1,10 @@
-CREATE DATABASE IF NOT EXISTS `swapi`;
-USE  `swapi`;
+CREATE DATABASE IF NOT EXISTS `sql7306624`;
+USE  `sql7306624`;
 
-
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
-
-$config = array(
-    'host' => $server ,
-    'user' => $username ,
-    'pw' => $password,
-    'db' => $db 
-);
-
-
+CREATE TABLE IF NOT EXISTS `comments`(
+    `id` int( 11 ) AUTO_INCREMENT PRIMARY KEY,
+    `movie_id` int(11) NOT NULL,
+    `episode_id` int(11) NOT NULL,
+    `created_at` datetime NOT NULL,
+    `comment` varchar(250) NOT NULL
+) ENGINE=InnoDB CHARSET=utf8;

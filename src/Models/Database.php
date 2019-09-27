@@ -6,10 +6,11 @@ use PDO;
 
 class Database
 {
-    private $username = 'root';
-    private $host = 'localhost';
-    private $db_name = 'swapi';
-    private $password = '';
+    private $username = 'sql7306624';
+    private $host = 'sql7.freesqldatabase.com';
+    private $port = '3306';
+    private $db_name = 'sql7306624';
+    private $password = 'qJlcurqWtC';
     private $error;
     private $statement;         
     private $connection;
@@ -22,7 +23,7 @@ class Database
         ];
         
         try {
-            $this->connection = new PDO('mysql:host=' . $this->host . ";db_name=" .$this->db_name,
+            $this->connection = new PDO('mysql:host=' . $this->host . ";port=" . $this->port . ";db_name=" .$this->db_name,
             $this->username, $this->password, $options);
             $sql = file_get_contents(__DIR__ . '/../../data/init.sql');
             $this->connection->exec($sql);
