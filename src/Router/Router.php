@@ -22,6 +22,7 @@ class Router
     }
     public function direct($uri)
     {
+        var_dump($uri, $this->routes, 'second vardump');
 
         if(array_key_exists($uri, $this->routes))
         {
