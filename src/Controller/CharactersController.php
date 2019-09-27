@@ -15,7 +15,6 @@ class CharactersController
     public function start()
     {
         $data = $this->swapiApi->getAllCharacters();
-        $someArray = json_decode($data, true);
-        echo json_encode($someArray);
+        echo json_encode($data);
     }
 }

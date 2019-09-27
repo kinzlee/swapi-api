@@ -2,7 +2,7 @@
 use Src\Router\Router;
 use Src\Models\Database;
 $uri = trim($_SERVER["REQUEST_URI"], "/");
-var_dump($uri);
+// var_dump($uri);
 
 $root = __DIR__;
 require $root . '/../src/Models/Database.php';

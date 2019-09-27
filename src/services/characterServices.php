@@ -17,7 +17,7 @@ class CharactersServices implements CharactersInterface
 
         $filterData = $filterData['results'];
         $filterOutKeys =array('mass', 'hair_color', 'skin_color', 'homeworld', 'films', 
-        'starships-', 'vehicles', 'species', 'created', 'edited', 'url');
+        'starships', 'vehicles', 'species', 'created', 'edited', 'url');
         $filterdArr = array_map(function ($f) use ($filterOutKeys) {
             return array_diff_key($f, array_flip($filterOutKeys));
         }, $filterData);
@@ -29,6 +29,6 @@ class CharactersServices implements CharactersInterface
             return ($a['height'] > $b['height']) ? -1 : 1;
         }
        );
-        var_dump($filterdArr);
+        return $filterdArr;
     }
 }

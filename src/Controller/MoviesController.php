@@ -16,7 +16,7 @@ class MoviesController
     public function index()
     {
         $data = $this->swapiApi->getAllMovies();
-        $someArray = json_decode($data, true);
-        echo json_encode($someArray);
+       // $someArray = json_decode($data, true);
+        echo json_encode($data);
     }
 }

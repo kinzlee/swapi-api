@@ -40,11 +40,10 @@ class MoviesServices implements MoviesInterface
           if (array_key_exists($element['episode_id'], $data))
           {
           $element['comment_count'] = $data[$element['episode_id']]; 
-          return $element;
           }
+          $element['comment_count'] = 0;  
+          return $element;       
       }, $filterdArr); 
-      var_dump($updatedMovies); 
-        die();
-        return $res->getBody();
+        return $updatedMovies;
     }
 }
