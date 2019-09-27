@@ -9,7 +9,7 @@ class CharactersServices implements CharactersInterface
 {
     public function getAllCharacters()
     {        
-        $client = new Client(['verify' => 'C:/usr/local/ssl/cert.pem']);
+        $client = new Client();
 
         $res = $client->request('GET', 'https://swapi.co/api/people');
         $filterData = $res->getBody();
