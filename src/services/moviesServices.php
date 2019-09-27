@@ -11,7 +11,7 @@ class MoviesServices implements MoviesInterface
 {
     public function getAllMovies()
     {        
-        $client = new Client(['verify' => 'C:/usr/local/ssl/cert.pem']);
+        $client = new Client();
 
         $res = $client->request('GET', 'https://swapi.co/api/films');
         $filterData = $res->getBody();
